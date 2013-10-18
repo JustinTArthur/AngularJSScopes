@@ -1,25 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+<div class="container">
     <h1>Model Scope in AngularJS</h1>
     <em>Under Construction</em>
     <section>
+
         <h2>In Views and Controllers</h2>
-        <h3>When Controllers Nest</h3>
-        <h3>ng-repeat</h3>
+
+        <section>
+            <h3>When Controllers Nest</h3>
+            The nested controller has access to any variables found on the parent controller's scope. It gets weird when
+            you override those things though.
+        </section>
+
+        <section>
+            <h3>In Forms</h3>
+            <p>
+                According to the docs, forms get their own controller (usually happens behind the scenes). This acts
+                like nested controller scope as described above. A form's scope shouldn't be confused with a form's
+                namespace, which is like a scope for validatable aspects of the form.
+            </p>
+        </section>
+
+        <section>
+            <h3>ng-repeat</h3>
+            <p>
+                Every repetition in an <code>ng-repeat</code> directive ends up with its own scope,
+                nested in the parent controller's scope.
+            </p>
+        </section>
     </section>
 
     <section>
         <h2>In Directives</h2>
-        <h3>In Directive Controllers</h3>
-        <h3>Isolated Scope</h3>
-        <h3>Isolated Scope's effect on Sibling Directives</h3>
-        <p>See <a href="https://github.com/angular/angular.js/issues/1924">AngularJS Issue 1924</a></p>
+        <section>
+            <h3>In Directive Controllers</h3>
+        </section>
+        <section>
+            <h3>Isolated Scope</h3>
+            The right way to take in or manipulate model data from the document hosting a directive is to give the
+            directive it's own scope. You can then determine how data is marshalled from the hosting controller and the
+            directive's own controller.
+        </section>
+
+        <section>
+            <h3>Isolated Scope's effect on Sibling Directives</h3>
+            <p>
+                The <code>require</code> property of a directive is used to add other directives as siblings of this one.
+                Unfortunately, the decisions you make around scope on your main directive will effect the scope of any
+                sibling directives. In this example, we try to enable the use of the ng-model attribute in a custom directive.
+                We would normally do this by making our directive a sibling of the out-of-the-box <code>ngModel</code>
+                directive. This fails when we decide to make our directive have an isolated scope. This behavior is
+                described in <a href="https://github.com/angular/angular.js/issues/1924">AngularJS Issue 1924</a>
+            </p>
+            <section class="row" data-example-dir="isolated_scope_sibling">
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Code</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">index.html</a></li>
+                            <li><a href="#">directives.js</a></li>
+                            <li><a href="#">controller.js</a></li>
+                        </ul>
+                        <code>codez</code>
+                    </div>
+                </div>
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Live</h4>
+                    </div>
+                    <div class="panel-body">
+                        iFrame goes here
+                    </div>
+                </div>
+            </section>
+        </section>
     </section>
+</div>
 </body>
 </html>
