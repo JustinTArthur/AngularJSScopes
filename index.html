@@ -21,8 +21,32 @@
 
         <section>
             <h3>When Controllers Nest</h3>
-            The nested controller has access to any variables found on the parent controller's scope. It gets weird when
-            you override those things though.
+            <p>
+                The nested controller has access to any variables found on the parent controller's scope. It gets weird when
+                you override those things though.
+            </p>
+            <section class="row" data-example-dir="nested">
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Code</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">index.html</a></li>
+                            <li><a href="#">controller.js</a></li>
+                        </ul>
+                        <code>codez</code>
+                    </div>
+                </div>
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Live</h4>
+                    </div>
+                    <div class="panel-body">
+                        iFrame goes here
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section>
@@ -32,6 +56,28 @@
                 like nested controller scope as described above. A form's scope shouldn't be confused with a form's
                 namespace, which is like a scope for validatable aspects of the form.
             </p>
+            <section class="row" data-example-dir="forms">
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Code</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">index.html</a></li>
+                            <li><a href="#">controller.js</a></li>
+                        </ul>
+                        <code>codez</code>
+                    </div>
+                </div>
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Live</h4>
+                    </div>
+                    <div class="panel-body">
+                        iFrame goes here
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section>
@@ -40,6 +86,28 @@
                 Every repetition in an <code>ng-repeat</code> directive ends up with its own scope,
                 nested in the parent controller's scope.
             </p>
+            <section class="row" data-example-dir="ng_repeat">
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Code</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">index.html</a></li>
+                            <li><a href="#">controller.js</a></li>
+                        </ul>
+                        <code>codez</code>
+                    </div>
+                </div>
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Live</h4>
+                    </div>
+                    <div class="panel-body">
+                        iFrame goes here
+                    </div>
+                </div>
+            </section>
         </section>
     </section>
 
@@ -53,6 +121,29 @@
             The right way to take in or manipulate model data from the document hosting a directive is to give the
             directive it's own scope. You can then determine how data is marshalled from the hosting controller and the
             directive's own controller.
+            <section class="row" data-example-dir="isolated_scope">
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Code</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">index.html</a></li>
+                            <li><a href="#">directives.js</a></li>
+                            <li><a href="#">controller.js</a></li>
+                        </ul>
+                        <code>codez</code>
+                    </div>
+                </div>
+                <div class="panel panel-default col-md-6">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Live</h4>
+                    </div>
+                    <div class="panel-body">
+                        iFrame goes here
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section>
